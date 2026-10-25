@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "The Frohmanian Symplectic Tether Companion Archive: June 1, 2026 Hydrodynamic Manuscript, Frohmanian Curve Monograph, Neural Scaling Laws, and Triple Regularization Framework"
+authors:
+  - family-names: "Frohman"
+    given-names: "Benjamin Stanley"
+    orcid: "https://orcid.org/0009-0006-7068-3718"
+    email: "frohmanbenjamin@gmail.com"
+version: "1.0.0"
+doi: "10.5281/zenodo.23629499"
+date-released: "2026-06-01"
+license: "Apache-2.0"
+repository-code: "https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01"
+url: "https://doi.org/10.5281/zenodo.23629499"

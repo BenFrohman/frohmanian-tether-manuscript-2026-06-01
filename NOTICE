@@ -1,7 +1,15 @@
-frohmanian-tether-manuscript-2026-06-01
-Copyright 2026 Benjamin Stanley Frohman (ORCID: https://orcid.org/0009-0006-7068-3718)
+frohmanian-tether-manuscript-2026-06-01 — The Frohmanian Symplectic Tether Companion Archive: June 1, 2026 Hydrodynamic Manuscript, Frohmanian Curve Monograph, Neural Scaling Laws, and Triple Regularization Framework
+Copyright 2026 Benjamin Stanley Frohman
+ORCID: https://orcid.org/0009-0006-7068-3718
+GitHub: https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01
+Zenodo DOI: https://doi.org/10.5281/zenodo.23629499
+Origin Provenance: 2026-06-01 00:10:20 CDT (Neural Scaling PDF) / 2026-06-01 01:20:57 CDT (June 1 Manuscript Git Commit) / 2026-06-22 16:05:10 CDT (Frohmanian Curve Monograph)
 
-This repository is licensed under the Apache License, Version 2.0.
+This product includes software, formal Lean 4 proofs, and mathematical manuscripts developed by
+Benjamin Stanley Frohman (frohmanbenjamin@gmail.com).
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this work except in compliance with the License.
 You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0

@@ -1,0 +1,33 @@
+{
+  "title": "The Frohmanian Symplectic Tether Companion Archive: June 1, 2026 Hydrodynamic Manuscript, Frohmanian Curve Monograph, Neural Scaling Laws, and Triple Regularization Framework",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "publication_date": "2026-06-01",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "doi": "10.5281/zenodo.23629499",
+  "creators": [
+    {
+      "name": "Frohman, Benjamin Stanley",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0006-7068-3718"
+    }
+  ],
+  "keywords": [
+    "Frohmanian Symplectic Tether",
+    "Navier-Stokes equations",
+    "Frohmanian Curve",
+    "neural scaling laws",
+    "metriplectic dissipation",
+    "fluid-gravity duality"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Origin Provenance: 2026-06-01 00:10:20 CDT (Neural Scaling PDF) / 2026-06-01 01:20:57 CDT (June 1 Manuscript Git Commit) / 2026-06-22 16:05:10 CDT (Frohmanian Curve Monograph). Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved. Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0).",
+  "description": "<p>Archival companion collection for the Frohmanian Symplectic Tether program containing five foundational timestamped manuscripts: (1) <em>June 1, 2026 Frohmanian Symplectic Tether Manuscript</em> (<code>main.pdf</code>, origin commit <code>2026-06-01 01:20:57 CDT</code>); (2) <em>The Frohmanian Symplectic Tether &amp; Frohmanian Curve Complete Analysis</em> (16 pp., <code>2026-06-22 16:05:10 CDT</code>); (3) <em>Frohmanian Tether Neural Scaling Secondary Paper</em> (5 pp., <code>2026-06-01 00:10:20 CDT</code>); (4) <em>Frohman's Triple Regularization Framework: Symplectic Tether, Metriplectic Dissipation, and Holographic Gravity</em> (8 pp., <code>2026-05-09 13:19:45 CDT</code>); and (5) <em>Mathematical Food Forethought: Pearl Maximization Function P(O,A,E)</em> (<code>2026-04-29 09:26:38 CDT</code>).</p>"
+}
