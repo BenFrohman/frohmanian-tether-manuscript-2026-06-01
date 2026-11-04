@@ -97,6 +97,27 @@ conserves $H$ for any entropy $S$. In particular $\mathfrak g^\Pi$ contributes n
 Metriplectic brackets~\cite{Morrison1986,Grmela} and vorticity-weighted metrics are known in spirit; we found no prior use of the specific weight $|\omega|^2$ with the projection $\Pi_u$ onto $\delta H^\perp$. We regard this \emph{specific} tensor as a modest new definition, not a new theorem.
 \end{remark}
 
+
+\section{What degeneracy does and does not preserve}
+Following Morrison~\cite{Morrison1986}, Kaufman~\cite{Kaufman1984} and Grmela--\"Ottinger~\cite{Grmela}, a metriplectic (GENERIC) system is
+$\dot F=\{F,H\}+(F,S)$ with $\{\cdot,\cdot\}$ Poisson, $(\cdot,\cdot)$ symmetric semidefinite, and the degeneracy conditions
+(D1) $\{F,S\}=0$ for all $F$ ($S$ a Casimir), (D2) $(F,H)=0$ for all $F$.
+\begin{proposition}\label{prop:degen}
+Under (D1)--(D2): (a) $\dot H=0$; (b) $\dot S=(S,S)\ge0$; (c) the Hamiltonian part $X_H$ is the unmodified Lie--Poisson (Euler) field, and its flow, forward or time-reversed, maps each coadjoint orbit to itself and preserves $\Omega_{\rm KKS}$; (d) the full flow is in general transverse to the orbits.
+\end{proposition}
+\begin{proof}(a) $\dot H=\{H,H\}+(H,S)=0$ by antisymmetry and (D2). (b) $\{S,H\}=0$ by (D1). (c) $(F,S)$ does not enter $X_H$; Hamiltonian flows of Lie--Poisson brackets preserve symplectic leaves and their forms, and $t\mapsto -t$ is again Hamiltonian (for $-H$). (d) $(F,S)$ changes Casimirs whenever $(C,S)\neq0$.\end{proof}
+\begin{remark}[Application to NS, and limits]
+Navier--Stokes does \emph{not} fit (D2) with $H$ the kinetic energy: viscosity dissipates $H$ itself. One obtains a GENERIC form only by
+adjoining internal energy (temperature) so that total energy is conserved. Hence for the velocity field alone, (c) gives: the
+\emph{reversible} Euler part preserves orbits, helicity and circulation, while the viscous part changes them (helicity and circulation decay generically).
+The flow does not stay on one coadjoint orbit. Degeneracy is an algebraic statement about the vector field and yields
+\emph{no} pointwise bound on $\|\omega\|_\infty$: stretching lives entirely in the reversible part, which (c) leaves untouched.
+\end{remark}
+\begin{remark}[Candidate novel contribution]
+The tether metric $\mathfrak g^\Pi$ is by construction a (D2)-compatible dissipative bracket on $\mathfrak X^*_{\rm div}$ with weight $|\omega|^2$.
+Proposition~\ref{prop:degen} applied to it is sound; its novelty lies only in the specific choice of metric. Producing a regularity bound would require an entropy $S$ with $(M,S)\lesssim -M^3$, i.e.\ adding the damping of \eqref{eq:model}, which changes the equations.
+\end{remark}
+
 \part*{Part II. Analysis}
 \section{Why the claimed Riccati bound fails}
 Let $\omega$ solve $\partial_t\omega+u\cdot\nabla\omega=\omega\cdot\nabla u+\nu\Delta\omega$ and $M(t)=\|\omega(t)\|_\infty$.
@@ -141,6 +162,7 @@ exactly as hard as the Millennium problem. We make no claim to have solved it.
 \bibitem{CaiJiu} X.~Cai, Q.~Jiu, Weak and strong solutions for the incompressible Navier--Stokes equations with damping, JMAA 343 (2008).
 \bibitem{Grmela} M.~Grmela, H.~C.~\"Ottinger, Dynamics and thermodynamics of complex fluids, Phys.\ Rev.\ E 56 (1997).
 \bibitem{HMR1998} D.~D.~Holm, J.~E.~Marsden, T.~S.~Ratiu, The Euler--Poincar\'e equations and semidirect products, Adv.\ Math.\ 137 (1998).
+\bibitem{Kaufman1984} A.~N.~Kaufman, Dissipative Hamiltonian systems: a unifying principle, Phys.\ Lett.\ A 100 (1984).
 \bibitem{KozonoTaniuchi} H.~Kozono, Y.~Taniuchi, Limiting case of the Sobolev inequality in BMO, CMP 214 (2000).
 \bibitem{MarsdenRatiu} J.~E.~Marsden, T.~S.~Ratiu, Introduction to Mechanics and Symmetry, Springer (1999).
 \bibitem{MarsdenWeinstein1983} J.~E.~Marsden, A.~Weinstein, Coadjoint orbits, vortices, and Clebsch variables for incompressible fluids, Physica D 7 (1983).
