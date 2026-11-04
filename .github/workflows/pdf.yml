@@ -1,0 +1,14 @@
+name: two-part-pdf
+on:
+  push: {branches: [main]}
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {sparse-checkout: two_part}
+      - uses: xu-cheng/latex-action@v3
+        with: {root_file: tether_two_part.tex, working_directory: two_part}
+      - uses: actions/upload-artifact@v4
+        with: {name: tether_two_part, path: two_part/tether_two_part.pdf}
