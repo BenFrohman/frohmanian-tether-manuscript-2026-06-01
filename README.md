@@ -16,3 +16,8 @@
 **Author:** Benjamin Stanley Frohman (ORCID: [0009-0006-7068-3718](https://orcid.org/0009-0006-7068-3718))  
 **Copyright:** Copyright (c) 2026 Benjamin Stanley Frohman  
 **License:** Apache License, Version 2.0 (see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE))
+
+## Zenodo archive
+
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23629498.svg)](https://doi.org/10.5281/zenodo.23629498) The Frohmanian Symplectic Tether Companion Archive: June 1, 2026 Hydrodynamic Manuscript, Frohmanian Curve Monograph, Neural Scaling Laws, and Triple Regularization Framework — all versions: [10.5281/zenodo.23629498](https://doi.org/10.5281/zenodo.23629498); latest version: [10.5281/zenodo.23629499](https://doi.org/10.5281/zenodo.23629499)
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23867561.svg)](https://doi.org/10.5281/zenodo.23867561) The Frohmanian Symplectic Tether Companion Archive: June 1, 2026 Hydrodynamic Manuscript, Frohmanian Curve Monograph, Neural Scaling Laws, and Triple Regularization Framework — all versions: [10.5281/zenodo.23867561](https://doi.org/10.5281/zenodo.23867561); latest version: [10.5281/zenodo.23867562](https://doi.org/10.5281/zenodo.23867562)
