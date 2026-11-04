@@ -119,6 +119,24 @@ The tether metric $\mathfrak g^\Pi$ is by construction a (D2)-compatible dissipa
 Proposition~\ref{prop:degen} applied to it is sound; its novelty lies only in the specific choice of metric. Producing a regularity bound would require an entropy $S$ with $(M,S)\lesssim -M^3$, i.e.\ adding the damping of \eqref{eq:model}, which changes the equations.
 \end{remark}
 
+
+\section{Frohman's mirror principle}
+\begin{proposition}[Frohman's mirror principle, sound form]\label{prop:mirror}
+Write the tethered generator as the metriplectic split
+\[ \dot F=\underbrace{\{F,H\}_{\rm LP}}_{\text{antisymmetric (2-form)}}\;-\;\underbrace{\mathfrak g^\Pi(\delta F,\delta S)}_{\text{symmetric (tether)}}, \]
+where $\{\cdot,\cdot\}_{\rm LP}$ is the Lie--Poisson bracket (its leaves carry the genuine 2-form $\Omega_{\rm KKS}$) and $\mathfrak g^\Pi$ is the tether metric. Then:
+(i) the two parts act side by side: the antisymmetric part conserves $H$ and every Casimir, while the symmetric part supplies the negative, dissipative ``mirror'' term, $\frac{d}{dt}S=\mathfrak g^\Pi(\delta S,\delta S)\ge0$, i.e.\ $-\frac{d}{dt}(-S)\le0$;
+(ii) under the degeneracy conditions $\{F,S\}_{\rm LP}=0$ and $\mathfrak g^\Pi(\cdot,\delta H)=0$, the mirror term does not alter the reversible (Euler) field, nor $H$;
+(iii) the balance is between \emph{types}: antisymmetric (reversible) versus symmetric (irreversible). It is not a cancellation inside the tether.
+\end{proposition}
+\begin{proof}(i) follows from antisymmetry of $\{\cdot,\cdot\}_{\rm LP}$ and positive semidefiniteness of $\mathfrak g^\Pi$ (Lemma~\ref{lem:sym}); (ii) is Proposition~\ref{prop:degen}; (iii) restates the decomposition of a bilinear form into antisymmetric and symmetric parts, which is unique.\end{proof}
+\begin{remark}[Symmetric plus mirror stays symmetric]
+Adding a negative copy $-\mathfrak g$ to a symmetric $\mathfrak g$ (or any symmetric correction) yields a symmetric form; it can never produce a 2-form. The only antisymmetric content of the tethered bracket is the Lie--Poisson part.
+\end{remark}
+\begin{remark}[What the mirror principle yields analytically]
+The log-Sobolev constant enters Part~II, not the geometry: by Brezis--Gallou\"et/Kozono--Taniuchi, $\|\nabla u\|_\infty\le C_{\rm LS}\,(1+\|\omega\|_\infty\log(e+\|u\|_{H^s}))$, which turns the $H^s$ estimate into $y'\le C\,M\,y\,(1+\log y)$ and hence continuation whenever $\int_0^T M<\infty$ (Theorem~\ref{thm:cond}). For Navier--Stokes itself the mirror term does \emph{not} produce $-\kappa'M^2$: by (ii) it leaves the stretching (reversible) part untouched. A genuine negative $M^3$ contribution appears only if the mirror term is added to the equations, as in \eqref{eq:model} (Theorem~\ref{thm:model}). The principle is therefore a sound structural statement and motivates the conditional and model theorems; it is not a proof of regularity for Navier--Stokes.
+\end{remark}
+
 \part*{Part II. Analysis}
 \section{Why the claimed Riccati bound fails}
 Let $\omega$ solve $\partial_t\omega+u\cdot\nabla\omega=\omega\cdot\nabla u+\nu\Delta\omega$ and $M(t)=\|\omega(t)\|_\infty$.
@@ -156,6 +174,23 @@ Local well-posedness is standard (the damping is smooth and locally Lipschitz in
 Part~I is sound once the tether is reclassified as a metriplectic metric; Part~II proves conditional regularity and
 a model result. The bridge ``tether $\Rightarrow$ Riccati bound for NS'' is the one essential missing step, and it is
 exactly as hard as the Millennium problem. We make no claim to have solved it.
+
+
+\appendix
+\section{Lean 4 certificate}
+\href{https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/lean.yml}{\texttt{lean} CI} builds \texttt{lean/MirrorMetriplectic/Basic.lean} (Lean v4.30.0-rc1, Mathlib v4.30.0-rc1) with no \texttt{sorry}, no \texttt{native\_decide}, and an axiom audit showing only \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}.
+\begin{center}\small
+\begin{tabular}{ll}\toprule
+Lean theorem & Statement\\\midrule
+\texttt{energy\_conserved} & $\dot H=0$ under degeneracy (finite-dim.\ module)\\
+\texttt{entropy\_monotone} & $\dot S\ge0$\\
+\texttt{mirror\_symm}, \texttt{mirror\_not\_two\_form} & symmetric $+$ mirror is symmetric; 2-form only if zero\\
+\texttt{antisymm\_iff\_symPart\_zero} & a bracket is a 2-form iff its symmetric part vanishes\\
+\texttt{proj\_degenerate}, \texttt{proj\_symm}, \texttt{proj\_psd} & projection lemma\\
+\texttt{tether\_symm}, \texttt{tether\_psd}, \texttt{tether\_proj\_degenerate} & $|\omega|^2$-weighted Galerkin tether on $\mathbb R^n$\\
+\texttt{riccati\_bound} & $M'\le C-\kappa'M^2\Rightarrow M\le\max(M(0),\sqrt{C/\kappa'})$\\\bottomrule
+\end{tabular}\end{center}
+\emph{Cited, not formalized:} the infinite-dimensional Lie--Poisson structure, the log-Sobolev/Kozono--Taniuchi inequality, Beale--Kato--Majda, parabolic smoothing, and Theorem~\ref{thm:model}. The Riccati hypothesis itself is \emph{not} proved for Navier--Stokes; Lean certifies only the implication.
 
 \begin{thebibliography}{99}
 \bibitem{Arnold1966} V.~I.~Arnold, Sur la g\'eom\'etrie diff\'erentielle des groupes de Lie de dimension infinie, Ann.\ Inst.\ Fourier 16 (1966).

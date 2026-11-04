@@ -17,6 +17,10 @@
 **Copyright:** Copyright (c) 2026 Benjamin Stanley Frohman  
 **License:** Apache License, Version 2.0 (see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE))
 
+## Two-part manuscript and Lean certificate
+[![two-part-pdf](https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/pdf.yml/badge.svg)](https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/pdf.yml) [![lean](https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/lean.yml/badge.svg)](https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/lean.yml)
+
+`two_part/tether_two_part.tex`: honest two-part paper (geometry; conditional regularity). `lean/`: Lean 4 proofs of the finite-dimensional metriplectic split, Frohman's mirror principle, the Galerkin tether, and the Riccati comparison bound. Log-Sobolev, BKM and the infinite-dimensional geometry are cited, not formalized. Not a solution of the Clay problem.
 ## Zenodo archive
 
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23629498.svg)](https://doi.org/10.5281/zenodo.23629498) The Frohmanian Symplectic Tether Companion Archive: June 1, 2026 Hydrodynamic Manuscript, Frohmanian Curve Monograph, Neural Scaling Laws, and Triple Regularization Framework — all versions: [10.5281/zenodo.23629498](https://doi.org/10.5281/zenodo.23629498); latest version: [10.5281/zenodo.23629499](https://doi.org/10.5281/zenodo.23629499)
