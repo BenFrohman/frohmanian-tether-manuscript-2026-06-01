@@ -175,6 +175,23 @@ Part~I is sound once the tether is reclassified as a metriplectic metric; Part~I
 a model result. The bridge ``tether $\Rightarrow$ Riccati bound for NS'' is the one essential missing step, and it is
 exactly as hard as the Millennium problem. We make no claim to have solved it.
 
+
+\appendix
+\section{Lean 4 certificate}
+\href{https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/lean.yml}{\texttt{lean} CI} builds \texttt{lean/MirrorMetriplectic/Basic.lean} (Lean v4.30.0-rc1, Mathlib v4.30.0-rc1) with no \texttt{sorry}, no \texttt{native\_decide}, and an axiom audit showing only \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}.
+\begin{center}\small
+\begin{tabular}{ll}\toprule
+Lean theorem & Statement\\\midrule
+\texttt{energy\_conserved} & $\dot H=0$ under degeneracy (finite-dim.\ module)\\
+\texttt{entropy\_monotone} & $\dot S\ge0$\\
+\texttt{mirror\_symm}, \texttt{mirror\_not\_two\_form} & symmetric $+$ mirror is symmetric; 2-form only if zero\\
+\texttt{antisymm\_iff\_symPart\_zero} & a bracket is a 2-form iff its symmetric part vanishes\\
+\texttt{proj\_degenerate}, \texttt{proj\_symm}, \texttt{proj\_psd} & projection lemma\\
+\texttt{tether\_symm}, \texttt{tether\_psd}, \texttt{tether\_proj\_degenerate} & $|\omega|^2$-weighted Galerkin tether on $\mathbb R^n$\\
+\texttt{riccati\_bound} & $M'\le C-\kappa'M^2\Rightarrow M\le\max(M(0),\sqrt{C/\kappa'})$\\\bottomrule
+\end{tabular}\end{center}
+\emph{Cited, not formalized:} the infinite-dimensional Lie--Poisson structure, the log-Sobolev/Kozono--Taniuchi inequality, Beale--Kato--Majda, parabolic smoothing, and Theorem~\ref{thm:model}. The Riccati hypothesis itself is \emph{not} proved for Navier--Stokes; Lean certifies only the implication.
+
 \begin{thebibliography}{99}
 \bibitem{Arnold1966} V.~I.~Arnold, Sur la g\'eom\'etrie diff\'erentielle des groupes de Lie de dimension infinie, Ann.\ Inst.\ Fourier 16 (1966).
 \bibitem{BKM1984} J.~T.~Beale, T.~Kato, A.~Majda, Remarks on the breakdown of smooth solutions for the 3-D Euler equations, CMP 94 (1984).

@@ -16,3 +16,8 @@
 **Author:** Benjamin Stanley Frohman (ORCID: [0009-0006-7068-3718](https://orcid.org/0009-0006-7068-3718))  
 **Copyright:** Copyright (c) 2026 Benjamin Stanley Frohman  
 **License:** Apache License, Version 2.0 (see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE))
+
+## Two-part manuscript and Lean certificate
+[![two-part-pdf](https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/pdf.yml/badge.svg)](https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/pdf.yml) [![lean](https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/lean.yml/badge.svg)](https://github.com/BenFrohman/frohmanian-tether-manuscript-2026-06-01/actions/workflows/lean.yml)
+
+`two_part/tether_two_part.tex`: honest two-part paper (geometry; conditional regularity). `lean/`: Lean 4 proofs of the finite-dimensional metriplectic split, Frohman's mirror principle, the Galerkin tether, and the Riccati comparison bound. Log-Sobolev, BKM and the infinite-dimensional geometry are cited, not formalized. Not a solution of the Clay problem.
