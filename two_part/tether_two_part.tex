@@ -119,6 +119,24 @@ The tether metric $\mathfrak g^\Pi$ is by construction a (D2)-compatible dissipa
 Proposition~\ref{prop:degen} applied to it is sound; its novelty lies only in the specific choice of metric. Producing a regularity bound would require an entropy $S$ with $(M,S)\lesssim -M^3$, i.e.\ adding the damping of \eqref{eq:model}, which changes the equations.
 \end{remark}
 
+
+\section{Frohman's mirror principle}
+\begin{proposition}[Frohman's mirror principle, sound form]\label{prop:mirror}
+Write the tethered generator as the metriplectic split
+\[ \dot F=\underbrace{\{F,H\}_{\rm LP}}_{\text{antisymmetric (2-form)}}\;-\;\underbrace{\mathfrak g^\Pi(\delta F,\delta S)}_{\text{symmetric (tether)}}, \]
+where $\{\cdot,\cdot\}_{\rm LP}$ is the Lie--Poisson bracket (its leaves carry the genuine 2-form $\Omega_{\rm KKS}$) and $\mathfrak g^\Pi$ is the tether metric. Then:
+(i) the two parts act side by side: the antisymmetric part conserves $H$ and every Casimir, while the symmetric part supplies the negative, dissipative ``mirror'' term, $\frac{d}{dt}S=\mathfrak g^\Pi(\delta S,\delta S)\ge0$, i.e.\ $-\frac{d}{dt}(-S)\le0$;
+(ii) under the degeneracy conditions $\{F,S\}_{\rm LP}=0$ and $\mathfrak g^\Pi(\cdot,\delta H)=0$, the mirror term does not alter the reversible (Euler) field, nor $H$;
+(iii) the balance is between \emph{types}: antisymmetric (reversible) versus symmetric (irreversible). It is not a cancellation inside the tether.
+\end{proposition}
+\begin{proof}(i) follows from antisymmetry of $\{\cdot,\cdot\}_{\rm LP}$ and positive semidefiniteness of $\mathfrak g^\Pi$ (Lemma~\ref{lem:sym}); (ii) is Proposition~\ref{prop:degen}; (iii) restates the decomposition of a bilinear form into antisymmetric and symmetric parts, which is unique.\end{proof}
+\begin{remark}[Symmetric plus mirror stays symmetric]
+Adding a negative copy $-\mathfrak g$ to a symmetric $\mathfrak g$ (or any symmetric correction) yields a symmetric form; it can never produce a 2-form. The only antisymmetric content of the tethered bracket is the Lie--Poisson part.
+\end{remark}
+\begin{remark}[What the mirror principle yields analytically]
+The log-Sobolev constant enters Part~II, not the geometry: by Brezis--Gallou\"et/Kozono--Taniuchi, $\|\nabla u\|_\infty\le C_{\rm LS}\,(1+\|\omega\|_\infty\log(e+\|u\|_{H^s}))$, which turns the $H^s$ estimate into $y'\le C\,M\,y\,(1+\log y)$ and hence continuation whenever $\int_0^T M<\infty$ (Theorem~\ref{thm:cond}). For Navier--Stokes itself the mirror term does \emph{not} produce $-\kappa'M^2$: by (ii) it leaves the stretching (reversible) part untouched. A genuine negative $M^3$ contribution appears only if the mirror term is added to the equations, as in \eqref{eq:model} (Theorem~\ref{thm:model}). The principle is therefore a sound structural statement and motivates the conditional and model theorems; it is not a proof of regularity for Navier--Stokes.
+\end{remark}
+
 \part*{Part II. Analysis}
 \section{Why the claimed Riccati bound fails}
 Let $\omega$ solve $\partial_t\omega+u\cdot\nabla\omega=\omega\cdot\nabla u+\nu\Delta\omega$ and $M(t)=\|\omega(t)\|_\infty$.
