@@ -1,9 +1,16 @@
 /-
-Copyright (c) 2026 Benjamin Stanley Frohman. Released under Apache-2.0.
+Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Benjamin Stanley Frohman
+-/
+
+import Mathlib
+
+/-!
+# lean.MirrorMetriplectic.Basic
+
 Finite-dimensional metriplectic split and Frohman's mirror principle.
 -/
-import Mathlib
 
 namespace MirrorMetriplectic
 
