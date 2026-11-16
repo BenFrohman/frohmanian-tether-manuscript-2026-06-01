@@ -1,7 +1,8 @@
 name: lean
 on:
-  push: {branches: [main]}
+  push:
   pull_request:
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,3 +18,14 @@ jobs:
         run: |
           lake env lean AxiomAudit.lean | tee audit.txt
           ! grep -vE "\[propext, Classical.choice, Quot.sound\]" audit.txt | grep axioms
+      - name: Forbidden tokens, comment-aware, with audit coverage check
+        working-directory: lean
+        run: python3 scripts/check_forbidden_tokens.py --require-imported-by StrictAxiomAudit.lean MirrorMetriplectic
+      - name: Strict whole-library axiom audit (every declaration)
+        working-directory: lean
+        run: |
+          set -o pipefail
+          lake env lean StrictAxiomAudit.lean 2>&1 | tee strict-audit.txt
+          grep -q '^STRICT AUDIT PASS' strict-audit.txt
+          if grep -v '^STRICT AUDIT PASS' strict-audit.txt | grep -qE 'STRICT AUDIT FAIL|sorryAx|ofReduceBool|error:'; then exit 1; fi
+          grep '^STRICT AUDIT SUMMARY' strict-audit.txt
