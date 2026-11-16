@@ -21,4 +21,4 @@ require mathlib from git
 
 @[default_target]
 lean_lib «MirrorMetriplectic» where
-  roots := #[`MirrorMetriplectic.Basic]
+  roots := #[`MirrorMetriplectic.Basic, `MirrorMetriplectic.Semantics]

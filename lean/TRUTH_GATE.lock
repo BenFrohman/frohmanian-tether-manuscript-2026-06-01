@@ -1,0 +1,14 @@
+{
+  "semantics_file": "MirrorMetriplectic/Semantics.lean",
+  "semantics_module": "MirrorMetriplectic.Semantics",
+  "paper_path": "../two_part/tether_two_part.tex",
+  "paper_sha256": "9b7ae445f0f8594e36d541ca064266e5ee718c9b5e0cf58c33dfbf305ceeb8e4",
+  "main_theorems": [
+    "MirrorMetriplectic.riccati_bound"
+  ],
+  "lock_region_sha256": "4357f45fdac622680f0a2c28bcd7dce6e6b051cc93cb9447c732b2c81e5c0656",
+  "draft_dirs": [],
+  "lean_roots": [
+    "MirrorMetriplectic"
+  ]
+}
