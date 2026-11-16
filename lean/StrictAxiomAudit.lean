@@ -5,6 +5,7 @@ Authors: Benjamin Stanley Frohman
 -/
 
 import MirrorMetriplectic.Basic
+import MirrorMetriplectic.Semantics
 
 /-!
 # lean.StrictAxiomAudit
