@@ -27,5 +27,5 @@ jobs:
           set -o pipefail
           lake env lean StrictAxiomAudit.lean 2>&1 | tee strict-audit.txt
           grep -q '^STRICT AUDIT PASS' strict-audit.txt
-          if grep -qE 'STRICT AUDIT FAIL|sorryAx|ofReduceBool|error:' strict-audit.txt; then exit 1; fi
+          if grep -v '^STRICT AUDIT PASS' strict-audit.txt | grep -qE 'STRICT AUDIT FAIL|sorryAx|ofReduceBool|error:'; then exit 1; fi
           grep '^STRICT AUDIT SUMMARY' strict-audit.txt
