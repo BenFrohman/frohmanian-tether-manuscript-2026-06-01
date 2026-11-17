@@ -101,3 +101,26 @@ def paper_claim : Prop :=
 ```
 
 See the doc comment of `MirrorMetriplectic/Semantics.lean` for the fixed reading of the paper's terms and the scope.
+
+## Re-audit (2026-11-16): this lock is NOT certifying
+
+Status: **REOPENED. The gate is red on purpose.** `TRUTH_GATE.lock` carries `"certifying": false`, and
+`scripts/truth_gate_check.py` fails while it does. Nothing was deleted: `Semantics.lean`, the quotes,
+the hashes and the history are unchanged.
+
+Rule applied (Benjamin Stanley Frohman, 2026-11-16):
+* There are no partial locks. A lock certifies only a step on the correct path to the full theorem
+  that is kernel-proved as the actual true answer, so that the next step can build on it.
+* Drifted, dummy, placeholder or stand-in types, names or categories are rejected.
+* Cross-ontology connections are not rejected for looking unrelated. The kernel check, and whether
+  the piece genuinely helps reach the full structured proof, decide.
+* `paper_claim` is an independent transcription of the verbatim paper quote, never an alias of
+  `formal_claim`, and the correspondence is never `rfl`/`Iff.rfl`.
+
+Locked claim under review: riccati_bound (appendix table row only)
+
+Why it is reopened:
+* Partial lock. Only the `riccati_bound` row of the Lean appendix table is locked. Theorem thm:cond, which the row serves, is not.
+* Not a step on a realized path. The paper says the hypothesis M′ ≤ C − κ′M² "has no derivation and is equivalent to an a priori bound that would settle the Clay problem". It also says the tether, "shown in Part I not to modify the NS vector field … cannot produce" the −κ′M² term.
+
+What would re-certify it: A lock needs a complete stated theorem of the paper on a path the paper does not itself declare unrealized.
