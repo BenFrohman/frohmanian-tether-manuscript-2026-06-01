@@ -10,5 +10,8 @@
   "draft_dirs": [],
   "lean_roots": [
     "MirrorMetriplectic"
-  ]
+  ],
+  "certifying": false,
+  "reopened_reason": "Partial lock. Only the `riccati_bound` row of the Lean appendix table is locked. Theorem thm:cond, which the row serves, is not.",
+  "reopened_on": "2026-11-16"
 }
