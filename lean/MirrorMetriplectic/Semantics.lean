@@ -11,7 +11,7 @@ import MirrorMetriplectic.PaperResults
 
 PAPER_PATH: ../two_part/tether_two_part.tex
 PAPER_SECTION: Whole paper. Every result the paper claims (its "Scope of claims" paragraph): Lemma lem:sym (a)-(c), Proposition prop:status, Proposition prop:degen (a)-(b), Proposition prop:mirror (i)-(iii), Theorem thm:cond
-PAPER_SHA256: 372f53bad6d3b047ae3c5b29ae048ea1f999d5ae58818c05633c45276fe55dca
+PAPER_SHA256: ba337a9ff6040dbc1ff4772947779901abd89e96654344abb578b71b63ebf53d
 
 Locked paper text, quoted verbatim (the scope paragraph and the statement of every claimed result):
 

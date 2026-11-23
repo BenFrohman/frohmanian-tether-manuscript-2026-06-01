@@ -2,7 +2,7 @@
   "semantics_file": "MirrorMetriplectic/Semantics.lean",
   "semantics_module": "MirrorMetriplectic.Semantics",
   "paper_path": "../two_part/tether_two_part.tex",
-  "paper_sha256": "372f53bad6d3b047ae3c5b29ae048ea1f999d5ae58818c05633c45276fe55dca",
+  "paper_sha256": "ba337a9ff6040dbc1ff4772947779901abd89e96654344abb578b71b63ebf53d",
   "main_theorems": [
     "MirrorMetriplectic.tetherTensor_symm_psd",
     "MirrorMetriplectic.sub_symm_antisymm_iff",

@@ -140,7 +140,7 @@ python3 -m unittest discover -s scripts/tests -p 'test_truth_gate_classify.py' -
 ## The locked claim of this repository
 
 * Paper: `../two_part/tether_two_part.tex`
-* sha256: `372f53bad6d3b047ae3c5b29ae048ea1f999d5ae58818c05633c45276fe55dca`
+* sha256: `ba337a9ff6040dbc1ff4772947779901abd89e96654344abb578b71b63ebf53d`
 * Section: Whole paper. Every result the paper claims (its "Scope of claims" paragraph): Lemma lem:sym (a)-(c), Proposition prop:status, Proposition prop:degen (a)-(b), Proposition prop:mirror (i)-(iii), Theorem thm:cond
 * Main theorem(s): `MirrorMetriplectic.tetherTensor_symm_psd`, `MirrorMetriplectic.sub_symm_antisymm_iff`, `MirrorMetriplectic.tetherMetric_degenerate`, `MirrorMetriplectic.metriplectic_rates`, `MirrorMetriplectic.mirror_principle`, `MirrorMetriplectic.conditional_regularity`
 * Lock file: `TRUTH_GATE.lock`; semantics: `MirrorMetriplectic/Semantics.lean`
