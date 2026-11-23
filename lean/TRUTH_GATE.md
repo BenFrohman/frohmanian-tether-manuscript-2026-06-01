@@ -140,36 +140,155 @@ python3 -m unittest discover -s scripts/tests -p 'test_truth_gate_classify.py' -
 ## The locked claim of this repository
 
 * Paper: `../two_part/tether_two_part.tex`
-* sha256: `9b7ae445f0f8594e36d541ca064266e5ee718c9b5e0cf58c33dfbf305ceeb8e4`
-* Section: Appendix "Lean 4 certificate" (table row riccati_bound and the scope sentence), with the constants' signs from Theorem thm:cond (Section "Conditional regularity")
-* Main theorem(s): `MirrorMetriplectic.riccati_bound`
+* sha256: `372f53bad6d3b047ae3c5b29ae048ea1f999d5ae58818c05633c45276fe55dca`
+* Section: Whole paper. Every result the paper claims (its "Scope of claims" paragraph): Lemma lem:sym (a)-(c), Proposition prop:status, Proposition prop:degen (a)-(b), Proposition prop:mirror (i)-(iii), Theorem thm:cond
+* Main theorem(s): `MirrorMetriplectic.tetherTensor_symm_psd`, `MirrorMetriplectic.sub_symm_antisymm_iff`, `MirrorMetriplectic.tetherMetric_degenerate`, `MirrorMetriplectic.metriplectic_rates`, `MirrorMetriplectic.mirror_principle`, `MirrorMetriplectic.conditional_regularity`
 * Lock file: `TRUTH_GATE.lock`; semantics: `MirrorMetriplectic/Semantics.lean`
+
+This is a whole-paper lock: the paper's "Scope of claims" paragraph lists exactly the claimed
+results, and every one of them is locked. Theorem thm:cond carries the Beale--Kato--Majda
+continuation criterion (BKM) and parabolic smoothing (PS) as named hypotheses, alongside the Riccati
+hypothesis (R); none of the three is proved here. Everything else in the paper is cited literature,
+an assessment of the source manuscript, a remark, or Conjecture thm:model, and is not claimed.
 
 Verbatim quote:
 
 ```
-\texttt{riccati\_bound} & $M'\le C-\kappa'M^2\Rightarrow M\le\max(M(0),\sqrt{C/\kappa'})$\\\bottomrule
+\noindent\textbf{Scope of claims.} The results this paper claims are exactly Lemma~\ref{lem:sym}, Propositions~\ref{prop:status},
+\ref{prop:degen} and~\ref{prop:mirror}, and Theorem~\ref{thm:cond}.
 
-Suppose there are $C\ge0,\kappa'>0$
+(a) For all $\delta u,\delta v$: $\mathfrak g_\omega(\delta u,\delta v)=\mathfrak g_\omega(\delta v,\delta u)$ and $\mathfrak g_\omega(\delta u,\delta u)\ge0$.
+(b) For all $\delta u,\delta v$: $\mathfrak g^\Pi_\omega(\delta u,\delta v)=\mathfrak g^\Pi_\omega(\delta v,\delta u)$ and $\mathfrak g^\Pi_\omega(\delta u,\delta u)\ge0$.
+(c) Let $V$ be any set, $\Omega\colon V\times V\to\mathbb R$ antisymmetric ($\Omega(a,b)+\Omega(b,a)=0$) and $\mathfrak g\colon V\times V\to\mathbb R$
+symmetric. Then $\Omega-\mathfrak g$ is antisymmetric if and only if $\mathfrak g=0$.
 
-\emph{Cited, not formalized:} the infinite-dimensional Lie--Poisson structure, the log-Sobolev/Kozono--Taniuchi inequality, Beale--Kato--Majda, parabolic smoothing, and Theorem~\ref{thm:model}. The Riccati hypothesis itself is \emph{not} proved for Navier--Stokes; Lean certifies only the implication.
+Let $V$ be a real vector space, $\{\cdot,\cdot\}\colon V\times V\to\mathbb R$ antisymmetric ($\{a,b\}+\{b,a\}=0$),
+$\mathfrak g$ a real bilinear form on $V$, $\Pi\colon V\to V$ linear, and $\delta H,\delta S\in V$ with $\Pi\,\delta H=0$
+(as for $\Pi=\Pi_u$). Write $\mathfrak g^\Pi(a,b)=\mathfrak g(\Pi a,\Pi b)$. Then $\mathfrak g^\Pi(\delta F,\delta H)=0$ for every $\delta F\in V$,
+and the metriplectic rate $\dot F=\{\delta F,\delta H\}-\mathfrak g^\Pi(\delta F,\delta S)$ gives $\dot H=0$ for every $\delta S$.
+
+Let $V$ be a real vector space of gradients, $\{\cdot,\cdot\}$ and $(\cdot,\cdot)$ real bilinear forms on $V$ with $\{\cdot,\cdot\}$
+antisymmetric and $(\cdot,\cdot)$ symmetric and positive semidefinite, $\delta H,\delta S\in V$, and
+$\dot F=\{\delta F,\delta H\}+(\delta F,\delta S)$. Under (D1) $\{\delta F,\delta S\}=0$ for all $\delta F$ and (D2) $(\delta F,\delta H)=0$ for all $\delta F$:
+(a) $\dot H=0$; (b) $\dot S=(\delta S,\delta S)\ge0$.
+
+(i) $\{\delta H,\delta H\}_{\rm LP}=0$, and $\{\delta C,\delta H\}_{\rm LP}=0$ for every Casimir $\delta C$ (that is, $\{\delta C,\cdot\}_{\rm LP}=0$), so the
+antisymmetric part conserves $H$ and every Casimir; and if $\{\delta F,\delta S\}_{\rm LP}=0$ for all $\delta F$, then
+$\frac{d}{dt}S=-\mathfrak g^\Pi(\delta S,\delta S)\le0$: the symmetric part is the dissipative ``mirror'' term;
+(ii) if $\{\delta F,\delta S\}_{\rm LP}=0$ for all $\delta F$ and $\Pi\,\delta H=0$, then $\dot H=0$ and $\mathfrak g^\Pi(\delta F,\delta H)=0$ for every $\delta F$:
+the mirror term does not change $H$;
+(iii) every $B\colon V\times V\to\mathbb R$ is $B=A+S$ with $A$ antisymmetric and $S$ symmetric, and this decomposition is unique.
+
+(R) \emph{Riccati hypothesis.} $M$ is continuous on $[0,t]$ for every $t\in[0,T^*)$, and for every $t\in(0,T^*)$, $M$ is differentiable at $t$ with $M'(t)\le C-\kappa'M(t)^2$;
+
+(BKM) \emph{Beale--Kato--Majda continuation criterion.} If $T^*<\infty$, then $\sup_{0\le t<T^*}M(t)=\infty$;
+
+(PS) \emph{Parabolic smoothing.} $\mathcal S(T)$ holds for every $T\in(0,T^*)$.
+
+Then $M(t)\le\max\{M(0),\sqrt{C/\kappa'}\}$ for all $t\in[0,T^*)$, $T^*=\infty$, and $\mathcal S(T)$ holds for every $T>0$, i.e.\ $u\in C^\infty((0,\infty)\times\T)$.
 ```
 
 ```lean
 def formal_claim : Prop :=
-  ∀ (M : ℝ → ℝ) (C κ' : ℝ), 0 < κ' → 0 ≤ C → (∀ t, HasDerivAt M (deriv M t) t) →
-    (∀ t, 0 ≤ t → deriv M t ≤ C - κ' * M t ^ 2) →
-    ∀ t, 0 ≤ t → M t ≤ max (M 0) (Real.sqrt (C / κ'))
+  (∀ (X : Type) [MeasurableSpace X] (μ : Measure X) (κ : ℝ), 0 < κ →
+    ∀ (ω : X → EuclideanSpace ℝ (Fin 3))
+      (Pi : (X → EuclideanSpace ℝ (Fin 3)) → X → EuclideanSpace ℝ (Fin 3)),
+    (∀ δu δv : X → EuclideanSpace ℝ (Fin 3),
+      κ * ∫ x, ‖ω x‖ ^ 2 * inner ℝ (δu x) (δv x) ∂μ =
+        κ * ∫ x, ‖ω x‖ ^ 2 * inner ℝ (δv x) (δu x) ∂μ) ∧
+    (∀ δu : X → EuclideanSpace ℝ (Fin 3),
+      0 ≤ κ * ∫ x, ‖ω x‖ ^ 2 * inner ℝ (δu x) (δu x) ∂μ) ∧
+    (∀ δu δv : X → EuclideanSpace ℝ (Fin 3),
+      κ * ∫ x, ‖ω x‖ ^ 2 * inner ℝ (Pi δu x) (Pi δv x) ∂μ =
+        κ * ∫ x, ‖ω x‖ ^ 2 * inner ℝ (Pi δv x) (Pi δu x) ∂μ) ∧
+    (∀ δu : X → EuclideanSpace ℝ (Fin 3),
+      0 ≤ κ * ∫ x, ‖ω x‖ ^ 2 * inner ℝ (Pi δu x) (Pi δu x) ∂μ)) ∧
+  (∀ (V : Type) (Ω g : V → V → ℝ), (∀ a b, Ω a b = -Ω b a) → (∀ a b, g a b = g b a) →
+    ((∀ a b, Ω a b - g a b = -(Ω b a - g b a)) ↔ ∀ a b, g a b = 0)) ∧
+  (∀ (V : Type) [AddCommGroup V] [Module ℝ V] (J : V → V → ℝ) (g : LinearMap.BilinForm ℝ V)
+    (P : V →ₗ[ℝ] V) (δH δS : V), (∀ a b, J a b = -J b a) → P δH = 0 →
+    (∀ δF, g (P δF) (P δH) = 0) ∧ J δH δH - g (P δH) (P δS) = 0) ∧
+  (∀ (V : Type) [AddCommGroup V] [Module ℝ V] (M : MirrorMetriplectic.Metriplectic V),
+    M.rate M.dH = 0 ∧ M.rate M.dS = M.G M.dS M.dS ∧ 0 ≤ M.rate M.dS) ∧
+  (∀ (V : Type) [AddCommGroup V] [Module ℝ V] (J : V → V → ℝ) (g : LinearMap.BilinForm ℝ V)
+    (P : V →ₗ[ℝ] V) (δH δS : V), (∀ a b, J a b = -J b a) → (∀ a, 0 ≤ g a a) →
+    (J δH δH = 0 ∧ (∀ δC, (∀ a, J δC a = 0) → J δC δH = 0) ∧
+      ((∀ a, J a δS = 0) →
+        J δS δH - g (P δS) (P δS) = -g (P δS) (P δS) ∧ J δS δH - g (P δS) (P δS) ≤ 0)) ∧
+    ((∀ a, J a δS = 0) → P δH = 0 →
+      J δH δH - g (P δH) (P δS) = 0 ∧ ∀ δF, g (P δF) (P δH) = 0) ∧
+    (∀ B : V → V → ℝ, ∃ A S : V → V → ℝ, (∀ a b, A a b = -A b a) ∧ (∀ a b, S a b = S b a) ∧
+      ∀ a b, B a b = A a b + S a b) ∧
+    (∀ A₁ S₁ A₂ S₂ : V → V → ℝ, (∀ a b, A₁ a b = -A₁ b a) → (∀ a b, S₁ a b = S₁ b a) →
+      (∀ a b, A₂ a b = -A₂ b a) → (∀ a b, S₂ a b = S₂ b a) →
+      (∀ a b, A₁ a b + S₁ a b = A₂ a b + S₂ a b) → ∀ a b, A₁ a b = A₂ a b ∧ S₁ a b = S₂ a b)) ∧
+  (∀ (M : ℝ → ℝ) (Tstar : EReal) (C κ' : ℝ) (𝒮 : ℝ → Prop), 0 < Tstar → 0 ≤ C → 0 < κ' →
+    (∀ t : ℝ, 0 ≤ t → (t : EReal) < Tstar → ContinuousOn M (Icc 0 t)) →
+    (∀ t : ℝ, 0 < t → (t : EReal) < Tstar → HasDerivAt M (deriv M t) t) →
+    (∀ t : ℝ, 0 < t → (t : EReal) < Tstar → deriv M t ≤ C - κ' * M t ^ 2) →
+    (Tstar ≠ ⊤ → ¬ BddAbove (M '' {t : ℝ | 0 ≤ t ∧ (t : EReal) < Tstar})) →
+    (∀ T : ℝ, 0 < T → (T : EReal) < Tstar → 𝒮 T) →
+    (∀ t : ℝ, 0 ≤ t → (t : EReal) < Tstar → M t ≤ max (M 0) (Real.sqrt (C / κ'))) ∧
+      Tstar = ⊤ ∧ ∀ T : ℝ, 0 < T → 𝒮 T)
 
 def paper_claim : Prop :=
-  ∀ (M : ℝ → ℝ) (C κ' : ℝ), 0 ≤ C → 0 < κ' → Differentiable ℝ M →
-    (∀ t : ℝ, 0 ≤ t → deriv M t ≤ C - κ' * (M t) ^ 2) →
-    ∀ t : ℝ, 0 ≤ t → M t ≤ max (M 0) (Real.sqrt (C / κ'))
+  -- Lemma lem:sym (a), (b), with |ω|² = ∑ ωᵢ² and δu·δv = ∑ δuᵢ δvᵢ
+  (∀ (X : Type) [MeasurableSpace X] (μ : Measure X) (κ : ℝ), 0 < κ →
+    ∀ (ω : X → EuclideanSpace ℝ (Fin 3))
+      (Pi : (X → EuclideanSpace ℝ (Fin 3)) → X → EuclideanSpace ℝ (Fin 3)),
+    (∀ δu δv : X → EuclideanSpace ℝ (Fin 3),
+      κ * ∫ x, (∑ i, ω x i ^ 2) * (∑ i, δu x i * δv x i) ∂μ =
+        κ * ∫ x, (∑ i, ω x i ^ 2) * (∑ i, δv x i * δu x i) ∂μ) ∧
+    (∀ δu : X → EuclideanSpace ℝ (Fin 3),
+      0 ≤ κ * ∫ x, (∑ i, ω x i ^ 2) * (∑ i, δu x i * δu x i) ∂μ) ∧
+    (∀ δu δv : X → EuclideanSpace ℝ (Fin 3),
+      κ * ∫ x, (∑ i, ω x i ^ 2) * (∑ i, Pi δu x i * Pi δv x i) ∂μ =
+        κ * ∫ x, (∑ i, ω x i ^ 2) * (∑ i, Pi δv x i * Pi δu x i) ∂μ) ∧
+    (∀ δu : X → EuclideanSpace ℝ (Fin 3),
+      0 ≤ κ * ∫ x, (∑ i, ω x i ^ 2) * (∑ i, Pi δu x i * Pi δu x i) ∂μ)) ∧
+  -- Lemma lem:sym (c)
+  (∀ (V : Type) (Ω g : V → V → ℝ), (∀ a b, Ω a b + Ω b a = 0) → (∀ a b, g a b = g b a) →
+    ((∀ a b, (Ω a b - g a b) + (Ω b a - g b a) = 0) ↔ g = fun _ _ => 0)) ∧
+  -- Proposition prop:status
+  (∀ (V : Type) [AddCommGroup V] [Module ℝ V] (J : V → V → ℝ) (g : LinearMap.BilinForm ℝ V)
+    (P : V →ₗ[ℝ] V) (δH δS : V), (∀ a b, J a b + J b a = 0) → P δH = 0 →
+    (∀ δF, g (P δF) (P δH) = 0) ∧ J δH δH - g (P δH) (P δS) = 0) ∧
+  -- Proposition prop:degen (a), (b)
+  (∀ (V : Type) [AddCommGroup V] [Module ℝ V] (J G : V →ₗ[ℝ] V →ₗ[ℝ] ℝ) (δH δS : V),
+    (∀ a b, J a b + J b a = 0) → (∀ a b, G a b = G b a) → (∀ a, 0 ≤ G a a) →
+    (∀ δF, J δF δS = 0) → (∀ δF, G δF δH = 0) →
+    J δH δH + G δH δS = 0 ∧ J δS δH + G δS δS = G δS δS ∧ 0 ≤ J δS δH + G δS δS) ∧
+  -- Proposition prop:mirror (i)-(iii)
+  (∀ (V : Type) [AddCommGroup V] [Module ℝ V] (J : V → V → ℝ) (g : LinearMap.BilinForm ℝ V)
+    (P : V →ₗ[ℝ] V) (δH δS : V), (∀ a b, J a b + J b a = 0) → (∀ a, 0 ≤ g a a) →
+    (J δH δH = 0 ∧ (∀ δC, (∀ a, J δC a = 0) → J δC δH = 0) ∧
+      ((∀ a, J a δS = 0) →
+        J δS δH - g (P δS) (P δS) = -g (P δS) (P δS) ∧ J δS δH - g (P δS) (P δS) ≤ 0)) ∧
+    ((∀ a, J a δS = 0) → P δH = 0 →
+      J δH δH - g (P δH) (P δS) = 0 ∧ ∀ δF, g (P δF) (P δH) = 0) ∧
+    (∀ B : V → V → ℝ, ∃ A S : V → V → ℝ, (∀ a b, A a b = -A b a) ∧ (∀ a b, S a b = S b a) ∧
+      ∀ a b, B a b = A a b + S a b) ∧
+    (∀ A₁ S₁ A₂ S₂ : V → V → ℝ, (∀ a b, A₁ a b = -A₁ b a) → (∀ a b, S₁ a b = S₁ b a) →
+      (∀ a b, A₂ a b = -A₂ b a) → (∀ a b, S₂ a b = S₂ b a) →
+      (∀ a b, A₁ a b + S₁ a b = A₂ a b + S₂ a b) → ∀ a b, A₁ a b = A₂ a b ∧ S₁ a b = S₂ a b)) ∧
+  -- Theorem thm:cond, with (R), (BKM), (PS)
+  (∀ (M : ℝ → ℝ) (Tstar : EReal) (C κ' : ℝ) (𝒮 : ℝ → Prop), 0 < Tstar → 0 ≤ C → 0 < κ' →
+    (∀ t : ℝ, 0 ≤ t → (t : EReal) < Tstar → ContinuousOn M (Icc 0 t)) →
+    (∀ t : ℝ, 0 < t → (t : EReal) < Tstar →
+      DifferentiableAt ℝ M t ∧ deriv M t ≤ C - κ' * M t ^ 2) →
+    (Tstar ≠ ⊤ → ∀ B : ℝ, ∃ t : ℝ, 0 ≤ t ∧ (t : EReal) < Tstar ∧ B < M t) →
+    (∀ T : ℝ, 0 < T → (T : EReal) < Tstar → 𝒮 T) →
+    (∀ t : ℝ, 0 ≤ t → (t : EReal) < Tstar → M t ≤ max (M 0) (Real.sqrt (C / κ'))) ∧
+      Tstar = ⊤ ∧ ∀ T : ℝ, 0 < T → 𝒮 T)
 ```
 
 See the doc comment of `MirrorMetriplectic/Semantics.lean` for the fixed reading of the paper's terms and the scope.
 
-## Re-audit (2026-11-16): this lock is NOT certifying
+## Re-audit (2026-11-16): history
+
+Resolved on 2026-11-23 by the whole-paper lock above (Theorem thm:cond is now locked with its
+named hypotheses; `"certifying": true`). The 2026-11-16 record is kept below unchanged.
+
 
 Status: **REOPENED. The gate is red on purpose.** `TRUTH_GATE.lock` carries `"certifying": false`, and
 `scripts/truth_gate_check.py` fails while it does. Nothing was deleted: `Semantics.lean`, the quotes,

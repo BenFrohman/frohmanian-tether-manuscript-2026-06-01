@@ -5,6 +5,7 @@ Authors: Benjamin Stanley Frohman
 -/
 
 import MirrorMetriplectic.Basic
+import MirrorMetriplectic.PaperResults
 import MirrorMetriplectic.Semantics
 
 /-!

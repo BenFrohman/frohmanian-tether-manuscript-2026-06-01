@@ -5,6 +5,7 @@ Authors: Benjamin Stanley Frohman
 -/
 
 import MirrorMetriplectic.Basic
+import MirrorMetriplectic.PaperResults
 
 /-!
 # lean.AxiomAudit
@@ -23,3 +24,10 @@ open MirrorMetriplectic
 #print axioms tether_psd
 #print axioms tether_proj_degenerate
 #print axioms riccati_bound
+#print axioms tetherTensor_symm_psd
+#print axioms sub_symm_antisymm_iff
+#print axioms tetherMetric_degenerate
+#print axioms metriplectic_rates
+#print axioms mirror_principle
+#print axioms riccati_bound_Icc
+#print axioms conditional_regularity
