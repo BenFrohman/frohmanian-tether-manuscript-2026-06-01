@@ -105,10 +105,10 @@ open MeasureTheory Set
 /-- Pointwise identity behind Lemma lem:sym: `‖ω‖² ⟪a, b⟫ = (∑ ωᵢ²)(∑ aᵢ bᵢ)` in `ℝ³`. -/
 theorem integrand_coords (w a b : EuclideanSpace ℝ (Fin 3)) :
     ‖w‖ ^ 2 * inner ℝ a b = (∑ i, w i ^ 2) * ∑ i, a i * b i := by
-  rw [EuclideanSpace.real_norm_sq_eq, PiLp.inner_apply]
+  rw [EuclideanSpace.real_norm_sq_eq, EuclideanSpace.inner_eq_star_dotProduct]
   congr 1
-  refine Finset.sum_congr rfl fun i _ => ?_
-  rw [RCLike.inner_apply, conj_trivial, mul_comm]
+  simp only [dotProduct, Pi.star_apply, star_trivial]
+  exact Finset.sum_congr rfl fun i _ => mul_comm _ _
 
 /-- The statements of the six main theorems of `MirrorMetriplectic/PaperResults.lean`. -/
 def formal_claim : Prop :=
