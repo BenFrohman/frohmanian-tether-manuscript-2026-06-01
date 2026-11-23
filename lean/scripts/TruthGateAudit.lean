@@ -26,7 +26,7 @@ open Lean Meta Elab Command
 namespace TruthGateAudit
 
 def standard : List Name := [``propext, ``Classical.choice, ``Quot.sound]
-def mains : List Name := [`MirrorMetriplectic.riccati_bound]
+def mains : List Name := [`MirrorMetriplectic.tetherTensor_symm_psd, `MirrorMetriplectic.sub_symm_antisymm_iff, `MirrorMetriplectic.tetherMetric_degenerate, `MirrorMetriplectic.metriplectic_rates, `MirrorMetriplectic.mirror_principle, `MirrorMetriplectic.conditional_regularity]
 
 partial def reach (env : Environment) (todo : List Name) (seen : NameSet) : NameSet :=
   match todo with

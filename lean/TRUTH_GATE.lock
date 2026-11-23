@@ -2,16 +2,19 @@
   "semantics_file": "MirrorMetriplectic/Semantics.lean",
   "semantics_module": "MirrorMetriplectic.Semantics",
   "paper_path": "../two_part/tether_two_part.tex",
-  "paper_sha256": "9b7ae445f0f8594e36d541ca064266e5ee718c9b5e0cf58c33dfbf305ceeb8e4",
+  "paper_sha256": "ba337a9ff6040dbc1ff4772947779901abd89e96654344abb578b71b63ebf53d",
   "main_theorems": [
-    "MirrorMetriplectic.riccati_bound"
+    "MirrorMetriplectic.tetherTensor_symm_psd",
+    "MirrorMetriplectic.sub_symm_antisymm_iff",
+    "MirrorMetriplectic.tetherMetric_degenerate",
+    "MirrorMetriplectic.metriplectic_rates",
+    "MirrorMetriplectic.mirror_principle",
+    "MirrorMetriplectic.conditional_regularity"
   ],
-  "lock_region_sha256": "4357f45fdac622680f0a2c28bcd7dce6e6b051cc93cb9447c732b2c81e5c0656",
+  "lock_region_sha256": "7c42e1c106cd794738918f74160aad76fd6f008bae5862fccf0d8673412f1522",
   "draft_dirs": [],
   "lean_roots": [
     "MirrorMetriplectic"
   ],
-  "certifying": false,
-  "reopened_reason": "Partial lock. Only the `riccati_bound` row of the Lean appendix table is locked. Theorem thm:cond, which the row serves, is not.",
-  "reopened_on": "2026-11-16"
+  "certifying": true
 }
