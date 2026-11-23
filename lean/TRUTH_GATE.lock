@@ -11,7 +11,7 @@
     "MirrorMetriplectic.mirror_principle",
     "MirrorMetriplectic.conditional_regularity"
   ],
-  "lock_region_sha256": "2583f16cfec0e5c9e0f7081a1359ad9c8757ce51b7be57bd203f4d5619deb273",
+  "lock_region_sha256": "7c42e1c106cd794738918f74160aad76fd6f008bae5862fccf0d8673412f1522",
   "draft_dirs": [],
   "lean_roots": [
     "MirrorMetriplectic"

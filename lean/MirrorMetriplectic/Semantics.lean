@@ -105,10 +105,13 @@ open MeasureTheory Set
 /-- Pointwise identity behind Lemma lem:sym: `‖ω‖² ⟪a, b⟫ = (∑ ωᵢ²)(∑ aᵢ bᵢ)` in `ℝ³`. -/
 theorem integrand_coords (w a b : EuclideanSpace ℝ (Fin 3)) :
     ‖w‖ ^ 2 * inner ℝ a b = (∑ i, w i ^ 2) * ∑ i, a i * b i := by
-  rw [EuclideanSpace.real_norm_sq_eq, EuclideanSpace.inner_eq_star_dotProduct]
+  rw [EuclideanSpace.real_norm_sq_eq]
   congr 1
-  simp only [dotProduct, Pi.star_apply, star_trivial]
-  exact Finset.sum_congr rfl fun i _ => mul_comm _ _
+  -- Mathlib: ⟪a, b⟫ = ofLp b ⬝ᵥ star (ofLp a). On ℝ, star is trivial, and
+  -- ofLp b ⬝ᵥ ofLp a = ∑ i, b i * a i.
+  have h := EuclideanSpace.inner_eq_star_dotProduct (𝕜 := ℝ) (ι := Fin 3) a b
+  rw [star_trivial] at h
+  simpa [dotProduct, mul_comm] using h
 
 /-- The statements of the six main theorems of `MirrorMetriplectic/PaperResults.lean`. -/
 def formal_claim : Prop :=
@@ -209,7 +212,7 @@ theorem intended_correspondence : formal_claim ↔ paper_claim := by
   unfold formal_claim paper_claim
   refine and_congr ?_ (and_congr ?_ (and_congr ?_ (and_congr ?_ (and_congr ?_ ?_))))
   · -- Lemma lem:sym (a), (b): norm and inner product in coordinates
-    simp only [integrand_coords]
+    simp [integrand_coords]
   · -- Lemma lem:sym (c)
     constructor
     · intro h V Ω g hΩ hg
